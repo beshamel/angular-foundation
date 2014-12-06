@@ -16,23 +16,43 @@
 
             </nav>
 
-            <aside class="left-off-canvas-menu">
-                <ul class="off-canvas-list">
-                    <li><a href="#">Left Sidebar</a></li>
-                </ul>
-            </aside>
-            <aside class="right-off-canvas-menu">
-                <ul class="off-canvas-list">
-                    <li><a href="#">Right Sidebar</a></li>
-                </ul>
-            </aside>
-            <section class="main-section">
-                <div class="small-12 columns">
-                    <h1>How to use</h1>
-                    <p>Just use the standard layout for an offcanvas page as documented in the <a href="http://foundation.zurb.com/docs/components/offcanvas.html">foundation docs</a></p>
-                    <p>As long as you include mm.foundation.offcanvas it should simply work</p>
-                </div>
-            </section>
+
+        <aside class="left-off-canvas-menu">
+            <ul class="off-canvas-list">
+                <li><label>Foundation</label></li>
+                <li class="has-submenu"><a href="#">The Psychohistorians</a>
+                    <ul class="left-submenu">
+                        <li class="back"><a href="#">Back</a></li>
+                        <li><label>Level 1</label></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li class="has-submenu"><a href="#">Link 2 w/ submenu</a>
+                            <ul class="left-submenu">
+                                <li class="back"><a href="#">Back</a></li>
+                                <li><label>Level 2</label></li>
+                                <li><a href="#">...</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">...</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">The Encyclopedists</a></li>
+                <li><a href="#">The Mayors</a></li>
+                <li><a href="#">The Traders</a></li>
+                <li><a href="#">The Merchant Princes</a></li>
+            </ul>
+        </aside>
+        <aside class="right-off-canvas-menu">
+            <ul class="off-canvas-list">
+                <li><a href="#">Right Sidebar</a></li>
+            </ul>
+        </aside>
+        <section class="main-section">
+            <div class="small-12 columns">
+                <h1>How to use</h1>
+                <p>Just use the standard layout for an offcanvas page as documented in the <a href="http://foundation.zurb.com/docs/components/offcanvas.html">foundation docs</a></p>
+                <p>As long as you include mm.foundation.offcanvas it should simply work</p>
+            </div>
+        </section>
 
             <a class="exit-off-canvas"></a>
         </div>
