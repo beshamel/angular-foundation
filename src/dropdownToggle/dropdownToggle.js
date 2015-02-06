@@ -103,16 +103,6 @@ angular.module('mm.foundation.dropdownToggle', [ 'mm.foundation.position', 'mm.f
             parent.addClass('hover');
           }
 
-          var dropdownLeft = $position.offset(dropdown).left;
-          var pipWidth = parseInt(
-            getComputedStyle(dropdown[0], '::before').getPropertyValue('width'), 10
-          );
-          var pipLeft = offset.left - dropdownLeft + Math.round((offset.width - pipWidth) / 2);
-          sheet
-            .css('#' + dropdown[0].id + '::before', {left: pipLeft + 'px'})
-            .css('#' + dropdown[0].id + '::after', {left: pipLeft - 1 + 'px'})
-            .sync();
-
           openElement = element;
 
           var shouldUnbind = true;
