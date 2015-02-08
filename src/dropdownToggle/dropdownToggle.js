@@ -52,8 +52,10 @@ angular.module('mm.foundation.dropdownToggle', [ 'mm.foundation.position', 'mm.f
           dropdown.css('display', 'block'); // We display the element so that offsetParent is populated
           var offset = $position.offset(element);
           var parentOffset = $position.offset(angular.element(dropdown[0].offsetParent));
+          var top = offset.top - parentOffset.top + offset.height;
+
           var css = {
-            top: offset.top - parentOffset.top + offset.height + 'px'
+            top: top + 'px'
           };
 
           if (controller.small()) {
@@ -69,6 +71,18 @@ angular.module('mm.foundation.dropdownToggle', [ 'mm.foundation.position', 'mm.f
           }
           dropdown.css(css);
           var dropdownWidth = dropdown.prop('offsetWidth');
+          var dropdownHeight = dropdown.prop('offsetHeight');
+
+          var bottomThreshold = dropdown[0].offsetParent.offsetHeight - dropdownHeight - 8;
+          if (top > bottomThreshold) {
+            top = top - dropdownHeight - offset.height;
+            dropdown.addClass('drop-top');
+            css.top = top + 'px';
+          }
+          else
+          {
+            dropdown.removeClass('drop-top');
+          }
 
           if (controller.small()) {
             css.left = Math.max((parentOffset.width - dropdownWidth) / 2, 8) + 'px';
