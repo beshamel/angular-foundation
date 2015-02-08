@@ -121,9 +121,17 @@ angular.module('mm.foundation.dropdownToggle', [ 'mm.foundation.position', 'mm.f
 
           var shouldUnbind = true;
           closeMenu = function (event) {
-            if (event && event.type == 'resize' && event.target.innerWidth == windowWidth) {
-              return;
+            if (event && event.type == 'resize')
+            {
+              if (event.target.innerWidth == windowWidth) {
+                return;
+              }
+              else
+              {
+                shouldUnbind = true;
+              }
             }
+
             if (shouldUnbind) {
               $document.off('click', closeMenu);
               angular.element($window).unbind('resize', closeMenu);
@@ -167,6 +175,7 @@ angular.module('mm.foundation.dropdownToggle', [ 'mm.foundation.position', 'mm.f
       }
 
       scope.$watch('$location.path', function() {
+        shouldUnbind = true;
         closeMenu();
       });
 
